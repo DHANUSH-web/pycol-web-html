@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PyCOL - Web App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="shortcut icon" href="assets/icons/PyCOL.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="PyCOL.js"></script>
+</head>
+
+<body>
+    <!-- App Tool bar -->
+    <div id="tool">
+        <i class="fa fa-circle" id="close"></i>
+        <i class="fa fa-circle" id="min"></i>
+        <i class="fa fa-circle" id="max"></i>
+    </div>
+    <div id="PyCOL_Main">
+        <!-- Color Picker -->
+        <div id="colorPicker">
+            <h3>
+                <i class="fa fa-sliders"></i>
+                Colour Picker
+            </h3>
+            <input type="range" min="0" max="255" value="220" id="RSlide" oninput="triggerSlide(this.value, 'RSet');">
+            <input type="number" min="0" max="255" value="220" id="RSet">
+            <br>
+            <input type="range" min="0" max="255" class="form-range" value="220" id="GSlide" oninput="triggerSlide(this.value, 'GSet');">
+            <input type="number" min="0" max="255" value="220" id="GSet">
+            <br>
+            <input type="range" min="0" max="255" class="form-range" value="220" id="BSlide" oninput="triggerSlide(this.value, 'BSet');">
+            <input type="number" min="0" max="255" value="220" id="BSet">
+        </div>
+        <div id="colorPreview">
+            <h3>
+                <i class="fa fa-user-circle"></i>
+                Colour Preview
+            </h3>
+            <!-- Color preview -->
+            <div id="showColor"></div>
+        </div>
+        <br>
+        <div id="userSpace">
+            <button onclick="copyHexCode();" id="hexCode">
+                #DCDCDC
+            </button>
+            
+            <input type="text" placeholder="Enter your custom colour..." id="userIn">
+            <br>
+            <button onclick="window.open('https://www.flatuicolors.com/');" id="flatUI">
+                <span>
+                    Explore More Colours
+                </span>
+            </button>
+            <br>
+            <button id="apply" onclick="applyColor();">Apply</button>
+            <button id="info" onclick="showKeys();//window.open('https://www.github.com/DHANUSH-web/PyCOL_Updated');"><span>More Info</span></button>
+        </div>
+        <br><br>
+        <p id="dev">
+            <b>PyCOL</b> is developed by
+            <a href='https://www.github.com/DHANUSH-web/' target="_blank">
+                <b>Dhanush H V</b>
+            </a>
+        </p>
+    </div>
+</body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</html>

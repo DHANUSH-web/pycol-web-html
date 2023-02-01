@@ -1,0 +1,192 @@
+/*PyCOL UI design*/
+
+body
+{
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    font-family: Arial;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    position: absolute;
+}
+
+#tool
+{
+    padding: 5px;
+    margin: 0;
+    width: fill;
+    background-color: #eeeaea;
+    border: solid 2px grey;
+    border-radius: 12px 12px 0 0;
+}
+
+#close { color: #ff605c; }
+#min { color: #ffbd44; }
+#max { color: #00ca4e; }
+
+#PyCOL_Main
+{
+    background-color: #ffffff;
+    border: solid 2px grey;
+    width: 355px;
+    height: 555px;
+    margin: 0;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 5px 12px 20px 2px #acacac;
+}
+
+#colorPicker, #colorPreview, #userSpace
+{
+    text-align: center;
+    margin: 0;
+}
+
+input[type='range']
+{
+    width: 220px;
+    margin: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+input[type='number']
+{
+    width: 55px;
+    height: 22px;
+    margin: 5px;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    border: solid 2px black;
+    border-radius: 5px;
+}
+
+/* Color Display */
+#showColor
+{
+    background-color: rgb(220, 220, 220);
+    width: 320px;
+    height: 80px;
+    border: solid 2px black;
+    border-radius: 12px;
+    margin: 0 auto;
+    transition: 0.5s;
+}
+
+#showColor:hover
+{
+    transform: scale(1.5);
+    border: dotted 2px black;
+    cursor: pointer;
+}
+
+#hexCode
+{
+    background-color: #487eb0;
+    border: solid 2px #192a56;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 15px;
+    width: 320px;
+    height: 45px;
+    margin: -25px 0 5px 0;
+    cursor: pointer;
+}
+
+#userIn
+{
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    width: 312px;
+    height: 35px;
+    border: solid 2px grey;
+    border-radius: 5px;
+}
+
+#flatUI
+{
+    background-color: #8b7adf;
+    color: white;
+    border: solid 2px #614fb8;
+    width: 320px;
+    height: 45px;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#flatUI span
+{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+#flatUI span::after
+{
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+#flatUI:hover span
+{
+    padding-right: 25px;
+}
+
+#flatUI:hover span::after
+{
+    opacity: 1;
+    right: 0;
+}
+
+#apply, #info
+{
+    width: 157px;
+    border-radius: 5px;
+    height: 45px;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
+}
+
+#apply
+{
+    background-color: #4a69bd;
+    border: solid 2px #1e3799;
+    transition: 0.5s;
+}
+
+#info
+{
+    background-color: #1abc9c;
+    border: solid 2px #16a085;
+    transition: 0.5s;
+}
+
+#apply:hover, #info:hover
+{
+    transform: scale(1.05);
+    border-radius: 25px;
+}
+
+#dev
+{
+    text-align: center;
+    font-family: Arial;
+}
