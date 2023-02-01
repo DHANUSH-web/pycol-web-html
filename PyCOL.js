@@ -177,7 +177,7 @@ function notifier(string, sleep, on_click='None', new_window=true, close=true, g
 function showKeys()
 {
     const keys = "\nCtrl + P --> Apply Custom color\nCtrl + R --> Generate Random Color";
-    notifier(string=keys, sleep=5, 'https://www.github.com/DHANUSH-web', pos='right', bg_color='#2c3e50');
+    notifier(string=keys, sleep=5, pos='right', bg_color='#2c3e50');
 }
 
 // shortcut key to call generate random colos
@@ -219,5 +219,5 @@ document.addEventListener(
 
 window.onload = function() {
     notifier(string="Welcom to PyCOL :)\n\nThis app is dedicated to my best friend Anna",
-             sleep=7, on_click='https://g.dev/google-developer-dhanushhv', pos='right', bg_color='');
+             sleep=7, on_click='https://www.instagram.com/dhanushh48/', pos='right', bg_color='');
 }
