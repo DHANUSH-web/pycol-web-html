@@ -218,6 +218,6 @@ document.addEventListener(
 );
 
 window.onload = function() {
-    notifier(string="Welcom to PyCOL Akshita Saini :)\n\nToday I'm very happy for you and Wish you very happy birthday and take this app as a small gift for you from my side, always be happy and be my friend forever",
+    notifier(string="Welcom to PyCOL :)\n\nThis app is dedicated to my best friend Anna",
              sleep=7, on_click='https://s.amizone.net/', pos='right', bg_color='');
 }
