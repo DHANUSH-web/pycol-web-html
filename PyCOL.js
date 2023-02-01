@@ -219,5 +219,5 @@ document.addEventListener(
 
 window.onload = function() {
     notifier(string="Welcom to PyCOL :)\n\nThis app is dedicated to my best friend Anna",
-             sleep=7, on_click='https://g.dev/google-developer/dhanushhv', pos='right', bg_color='');
+             sleep=7, on_click='https://g.dev/google-developer-dhanushhv', pos='right', bg_color='');
 }
