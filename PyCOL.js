@@ -134,7 +134,7 @@ const generateRandomColors = () => {
     showColor();
 }
 
-const notifier = (string, sleep, on_click='None', new_window=true, close=true, grav='top', pos='left', stop_on_focus=false, bg_color='#00505055') => {
+const notifier = (string, sleep, on_click='None', new_window=true, close=true, grav='bottom', pos='center', stop_on_focus=false, bg_color='#5352edee') => {
     Toastify({
         text: string,
         duration: sleep * 1000,
@@ -148,16 +148,20 @@ const notifier = (string, sleep, on_click='None', new_window=true, close=true, g
         style: {
             background: bg_color,
             fontWeight: 'bold',
-            border: 'solid 2px black',
-            borderRadius: '15px'
+            fontFamily: '-apple-system, sans-serif',
+            fontSize: '12px',
+            border: 'solid 2px #5352ed',
+            borderRadius: '10px',
+            boxShadow: '0 0 12px 2px #00000055',
+            width: '500px'
         },
         oldestFirst: false
     }).showToast();
 }
 
 const showKeys = () => {
-    const keys = "\nCtrl + P --> Apply Custom color\nCtrl + R --> Generate Random Color";
-    notifier(string=keys, sleep=5, pos='right', bg_color='#00808055');
+    const keys = "\nCtrl+P to Apply Custom color\nCtrl+R to Generate Random Color";
+    notifier(string=keys, sleep=5, pos='right');
 }
 
 // shortcut key to call generate random colos

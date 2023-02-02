@@ -1,4 +1,8 @@
 /*PyCOL UI design*/
+@font-face {
+    font-family: Macondo;
+    src: url("fonts/macondo.ttf");
+}
 
 body
 {
@@ -23,16 +27,28 @@ body
     border-radius: 12px 12px 0 0;
 }
 
-#close { color: #ff605c; }
-#min { color: #ffbd44; }
-#max { color: #00ca4e; }
+#close {
+    color: #ff605c;
+    cursor: arrow;
+}
+
+#min {
+    color: #ffbd44;
+    cursor: arrow;
+}
+
+#max {
+    color: #00ca4e;
+    cursor: arrow;
+}
+
 
 #PyCOL_Main
 {
     background-color: #ffffff;
     border: solid 2px grey;
     width: 355px;
-    height: 555px;
+    min-height: 555px;
     margin: 0;
     border-radius: 0 0 12px 12px;
     box-shadow: 5px 12px 20px 2px #acacac;
@@ -42,6 +58,7 @@ body
 {
     text-align: center;
     margin: 0;
+    font-family: Macondo;
 }
 
 input[type='range']
@@ -59,9 +76,15 @@ input[type='number']
     margin: 5px;
     padding: 5px;
     font-weight: bold;
-    font-size: 20px;
-    border: solid 2px black;
+    font-size: 15px;
+    border: solid 2px #00000022;
     border-radius: 5px;
+    outline: none;
+    transition: 0.5s;
+}
+
+input[type='number']:focus {
+    border: solid 2px #0050ff;
 }
 
 /* Color Display */
@@ -189,4 +212,18 @@ input[type='number']
 {
     text-align: center;
     font-family: Arial;
+}
+
+.info {
+    background-color: #5352ed;
+    border: solid 2px #5352ed55;
+    border-radius: 15px;
+    font-family: arial;
+}
+
+#preview, #picker {
+    color: #fff;
+    background-color: #0050ff;
+    padding: 5px;
+    border-radius: 5px;
 }

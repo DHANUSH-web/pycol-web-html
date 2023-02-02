@@ -1,7 +1,4 @@
 .vscode/
-snippets.js
 node-modules/
-*.exe
-*.bat
 .git/
-.fleet/
+*.exe
