@@ -77,9 +77,11 @@ const triggerSlide = (value, id) => {
 
 // to apply custom colors
 const applyColor = () => {
-    let color = document.getElementById('userIn').value.toUpperCase();
+    let color = document.getElementById('userIn').value;
     
     if (color.length > 1) {
+        color = color.toUpperCase();
+
         if (color[0] == '#') {
             if (color.length <= 7) {
                 color = color.substring(1, color.length);
@@ -107,6 +109,7 @@ const applyColor = () => {
     }
 
     else {
+        notifier("Please enter colour values as RGB or Hex code", )
         setSliderValues(getSpinBoxValues());
         showColor();
     }
@@ -134,7 +137,7 @@ const generateRandomColors = () => {
     showColor();
 }
 
-const notifier = (string, sleep, on_click='None', new_window=true, close=true, grav='bottom', pos='center', stop_on_focus=false, bg_color='#5352edee') => {
+const notifier = (string, sleep, on_click='None', new_window=true, close=true, grav='bottom', pos='center', stop_on_focus=false, bg_color='#5352edee', border_color='none') => {
     Toastify({
         text: string,
         duration: sleep * 1000,
@@ -148,9 +151,9 @@ const notifier = (string, sleep, on_click='None', new_window=true, close=true, g
         style: {
             background: bg_color,
             fontWeight: 'bold',
-            fontFamily: '-apple-system, sans-serif',
+            fontFamily: 'pycol',
             fontSize: '12px',
-            border: 'solid 2px #5352ed',
+            border: `solid 2px ${border_color=='none' ? bg_color : border_color}`,
             borderRadius: '10px',
             boxShadow: '0 0 12px 2px #00000055',
             width: '500px'
@@ -161,7 +164,7 @@ const notifier = (string, sleep, on_click='None', new_window=true, close=true, g
 
 const showKeys = () => {
     const keys = "\nCtrl+P to Apply Custom color\nCtrl+R to Generate Random Color";
-    notifier(string=keys, sleep=5, pos='right');
+    notifier(keys, 3, on_click='None', true, true, 'bottom', 'center', false, '#00b894', 'black');
 }
 
 // shortcut key to call generate random colos
@@ -202,6 +205,6 @@ document.addEventListener(
 );
 
 window.onload = () => {
-    notifier(string="Welcom to PyCOL :)\n\nThis app is dedicated to my best friend Anna",
-             sleep=7, on_click='https://www.instagram.com/dhanushh48/', pos='right', bg_color='');
+    notifier("Welcom to PyCOL :)\n\nThis app is dedicated to my best friend Anna",
+             7, 'https://www.instagram.com/dhanushh48/', true, false, 'bottom', 'center', false, "#00b894ee", '#00b894');
 }
