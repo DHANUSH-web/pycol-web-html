@@ -129,6 +129,12 @@ input[type='number']:focus {
     height: 35px;
     border: solid 2px grey;
     border-radius: 7px;
+    outline: none;
+    transition: 0.5s;
+}
+
+#userIn:focus {
+    border: solid 2px #0050ff;
 }
 
 #flatUI
