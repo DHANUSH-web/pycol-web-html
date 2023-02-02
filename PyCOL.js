@@ -1,7 +1,6 @@
 // PyCOL by Dhanush H V
 // to get the slider values
-function getSliderValues()
-{
+const getSliderValues = () => {
     let r = parseInt(document.getElementById('RSlide').value);
     let g = parseInt(document.getElementById('GSlide').value);
     let b = parseInt(document.getElementById('BSlide').value);
@@ -9,8 +8,7 @@ function getSliderValues()
 }
 
 // to get the spin box values
-function getSpinBoxValues()
-{
+const getSpinBoxValues = () => {
     let r = parseInt(document.getElementById("RSet").value);
     let g = parseInt(document.getElementById("GSet").value);
     let b = parseInt(document.getElementById("BSet").value);
@@ -18,38 +16,33 @@ function getSpinBoxValues()
 }
 
 // update sliders
-function setSliderValues(color)
-{
+const setSliderValues = (color) => {
     document.getElementById('RSlide').value = color[0];
     document.getElementById('GSlide').value = color[1];
     document.getElementById('BSlide').value = color[2];
 }
 
 // update SpinBox
-function setSpinBoxValues(color)
-{
+const setSpinBoxValues = (color) => {
     document.getElementById("RSet").value = color[0];
     document.getElementById("GSet").value = color[1];
     document.getElementById("BSet").value = color[2];
 }
 
 // to get the hex color of a given value
-function toHex(color)
-{
+const toHex = (color) => {
     let hex = color.toString(16);
 
     return hex.length == 1 ? '0' + hex : hex;
 }
 
 // to get the approximate hex color
-function getHex(color)
-{
+const getHex = (color) => {
     return '#' + toHex(color[0]) + toHex(color[1]) + toHex(color[2]);
 }
 
 // to get the main colors
-function getRGB(hex)
-{
+const getRGB = (hex) => {
     if (hex.length == 6)
     {
         let r, g, b;
@@ -70,31 +63,25 @@ function getRGB(hex)
 }
 
 // to update all entities
-function showColor()
-{
+const showColor = () => {
     let color = getHex(getSliderValues()).toUpperCase();
     document.getElementById('hexCode').innerHTML = color;
     document.getElementById('showColor').style.backgroundColor = color;
 }
 
 // updates all the entity when sliders are triggerred
-function triggerSlide(value, id)
-{
+const triggerSlide = (value, id) => {
     document.getElementById(id).value = value;
     showColor();
 }
 
 // to apply custom colors
-function applyColor()
-{
+const applyColor = () => {
     let color = document.getElementById('userIn').value.toUpperCase();
     
-    if (color.length > 1)
-    {
-        if (color[0] == '#')
-        {
-            if (color.length <= 7)
-            {
+    if (color.length > 1) {
+        if (color[0] == '#') {
+            if (color.length <= 7) {
                 color = color.substring(1, color.length);
                 let c = getRGB(color);
                 setSliderValues(c);
@@ -106,8 +93,7 @@ function applyColor()
                 alert('Please enter a valid hex color code...');
         }
 
-        else
-        {
+        else {
             color = color.split(' ');
             let r, g, b;
             r = parseInt(color[0]);
@@ -120,29 +106,25 @@ function applyColor()
         }
     }
 
-    else
-    {
+    else {
         setSliderValues(getSpinBoxValues());
         showColor();
     }
 }
 
-function copyHexCode()
-{
+const copyHexCode = () => {
     let hex = getHex(getSliderValues()).toUpperCase();
     navigator.clipboard.writeText(hex);
     document.getElementById('hexCode').innerHTML = 'Copied ' + hex;
 }
 
-function copyRGB()
-{
+const copyRGB = () => {
     let rgb = getSpinBoxValues();
     rgb = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
     navigator.clipboard.writeText(rgb);
 }
 
-function generateRandomColors()
-{
+const generateRandomColors = () => {
     let r = parseInt(Math.random() * 255);
     let g = parseInt(Math.random() * 255);
     let b = parseInt(Math.random() * 255);
@@ -152,8 +134,7 @@ function generateRandomColors()
     showColor();
 }
 
-function notifier(string, sleep, on_click='None', new_window=true, close=true, grav='top', pos='left', stop_on_focus=false, bg_color='#2c3e50')
-{
+const notifier = (string, sleep, on_click='None', new_window=true, close=true, grav='top', pos='left', stop_on_focus=false, bg_color='#00505055') => {
     Toastify({
         text: string,
         duration: sleep * 1000,
@@ -174,10 +155,9 @@ function notifier(string, sleep, on_click='None', new_window=true, close=true, g
     }).showToast();
 }
 
-function showKeys()
-{
+const showKeys = () => {
     const keys = "\nCtrl + P --> Apply Custom color\nCtrl + R --> Generate Random Color";
-    notifier(string=keys, sleep=5, pos='right', bg_color='#2c3e50');
+    notifier(string=keys, sleep=5, pos='right', bg_color='#00808055');
 }
 
 // shortcut key to call generate random colos
@@ -217,7 +197,7 @@ document.addEventListener(
   false
 );
 
-window.onload = function() {
+window.onload = () => {
     notifier(string="Welcom to PyCOL :)\n\nThis app is dedicated to my best friend Anna",
              sleep=7, on_click='https://www.instagram.com/dhanushh48/', pos='right', bg_color='');
 }
