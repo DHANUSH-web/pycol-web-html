@@ -25,13 +25,13 @@
                 Colour Picker
             </h3>
             <input type="range" min="0" max="255" value="220" id="RSlide" oninput="triggerSlide(this.value, 'RSet');">
-            <input type="number" min="0" max="255" value="220" id="RSet">
+            <input type="number" min="0" max="255" value="220" id="RSet" oninput="triggerSlide(this.value, 'RSlide')">
             <br>
             <input type="range" min="0" max="255" class="form-range" value="220" id="GSlide" oninput="triggerSlide(this.value, 'GSet');">
-            <input type="number" min="0" max="255" value="220" id="GSet">
+            <input type="number" min="0" max="255" value="220" id="GSet" oninput="triggerSlide(this.value, 'GSlide')" required>
             <br>
             <input type="range" min="0" max="255" class="form-range" value="220" id="BSlide" oninput="triggerSlide(this.value, 'BSet');">
-            <input type="number" min="0" max="255" value="220" id="BSet">
+            <input type="number" min="0" max="255" value="220" id="BSet" oninput="triggerSlide(this.value, 'BSlide')">
         </div>
         <div id="colorPreview">
             <h3>
@@ -62,7 +62,7 @@
     </div>
     <p id="dev">
         <b>PyCOL</b> is developed by
-        <a href='https://www.instagram.com/dhanushh48/' target="_blank">
+        <a href='https://www.instagram.com/dhanushh48/' target="_blank" id="developer" title='PyCOL Developer'>
             <b>Dhanush H V</b>
         </a>
     </p>

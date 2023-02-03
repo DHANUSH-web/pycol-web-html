@@ -22,6 +22,7 @@ body
     width: fill;
     background-color: #eeeaea;
     border: solid 2px grey;
+    border-bottom: solid 0 transparent;
     border-radius: 12px 12px 0 0;
 }
 
@@ -146,7 +147,7 @@ input[type='number']:focus {
     height: 45px;
     cursor: pointer;
     margin: 5px;
-    border-radius: 5px;
+    border-radius: 7px;
     font-size: 15px;
     font-weight: bold;
     font-family: pycol;

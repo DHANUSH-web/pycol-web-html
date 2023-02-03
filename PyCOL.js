@@ -71,6 +71,16 @@ const showColor = () => {
 
 // updates all the entity when sliders are triggerred
 const triggerSlide = (value, id) => {
+    if (parseInt(value) < 0 || parseInt(value) > 255 || value.length == 0)
+        notifier('Invalid value',
+                 2,
+                 'none',
+                 false,
+                 true,
+                 'bottom',
+                 'center',
+                 '#ff7675',
+                 '#d63031')
     document.getElementById(id).value = value;
     showColor();
 }
@@ -109,9 +119,7 @@ const applyColor = () => {
     }
 
     else {
-        notifier("Please enter colour values as RGB or Hex code", )
-        setSliderValues(getSpinBoxValues());
-        showColor();
+        notifier("Please enter colour values as RGB or Hex code");
     }
 }
 
@@ -138,6 +146,7 @@ const generateRandomColors = () => {
 }
 
 const notifier = (string, sleep, on_click='None', new_window=true, close=true, grav='bottom', pos='center', stop_on_focus=false, bg_color='#5352edee', border_color='none') => {
+
     Toastify({
         text: string,
         duration: sleep * 1000,
@@ -164,7 +173,7 @@ const notifier = (string, sleep, on_click='None', new_window=true, close=true, g
 
 const showKeys = () => {
     const keys = "\nCtrl+P to Apply Custom color\nCtrl+R to Generate Random Color";
-    notifier(keys, 3, on_click='None', true, true, 'bottom', 'center', false, '#00b894', 'black');
+    notifier(keys, 3, 'none', true, true, 'bottom', 'center', false, '#00b894', 'black');
 }
 
 // shortcut key to call generate random colos
@@ -205,6 +214,6 @@ document.addEventListener(
 );
 
 window.onload = () => {
-    notifier("Welcom to PyCOL :)\n\nThis app is dedicated to my best friend Anna",
+    notifier("Welcom to PyCOL :)\n\nPyCOL is developed by Dhanush H V",
              7, 'https://www.instagram.com/dhanushh48/', true, false, 'bottom', 'center', false, "#00b894ee", '#00b894');
 }
