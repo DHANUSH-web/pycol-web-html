@@ -64,8 +64,15 @@ input[type='range']
 {
     width: 220px;
     margin: 5px;
-    padding: 5px;
     cursor: pointer;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    transition: 0.2s;
+}
+
+input[type='range']::-webkit-slider-thumb:hover {
+    transform: scale(1.5);
 }
 
 input[type='number']
