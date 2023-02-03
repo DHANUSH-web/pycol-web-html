@@ -59,7 +59,6 @@ const getRGB = (hex) => {
         notifier(
             "Please enter a valid hex color code",
             2,
-            () => {},
             "https://cdn-icons-png.flaticon.com/512/595/595067.png"
         );
 };
@@ -77,7 +76,6 @@ const triggerSlide = (value, id) => {
         notifier(
             "Invalid value",
             2,
-            () => {},
             "https://cdn-icons-png.flaticon.com/512/595/595067.png",
             false,
             true,
@@ -108,7 +106,6 @@ const applyColor = () => {
                 notifier(
                     "Please enter valid color value",
                     2,
-                    () => {},
                     "https://cdn-icons-png.flaticon.com/512/4344/4344882.png",
                     false,
                     false,
@@ -133,7 +130,6 @@ const applyColor = () => {
         notifier(
             "Please enter colour values as RGB or Hex code",
             2,
-            () => {},
             "https://cdn-icons-png.flaticon.com/512/4344/4344882.png",
             false,
             false
@@ -166,7 +162,6 @@ const generateRandomColors = () => {
 const notifier = (
     string,
     sleep,
-    on_click,
     icon = "",
     new_window = true,
     close = true,
@@ -176,11 +171,10 @@ const notifier = (
     bg_color = "#5352edee",
     border_color = "none"
 ) => {
-    Toastify({
+    let toast = Toastify({
         text: string,
         duration: sleep * 1000,
         className: "info",
-        on_click: on_click,
         newWindow: new_window,
         close: close,
         gravity: grav,
@@ -200,7 +194,9 @@ const notifier = (
             width: "500px",
         },
         oldestFirst: false,
-    }).showToast();
+    });
+
+    toast.showToast();
 };
 
 const showKeys = () => {
@@ -210,7 +206,6 @@ const showKeys = () => {
         keys,
         3,
         "https://cdn-icons-png.flaticon.com/512/471/471662.png",
-        () => {},
         true,
         true,
         "bottom",
@@ -246,7 +241,6 @@ document.addEventListener(
             notifier(
                 `Copied ${color}`,
                 1,
-                () => {},
                 "",
                 false,
                 true,
@@ -287,9 +281,8 @@ document.addEventListener(
 
 window.onload = () => {
     notifier(
-        "Welcome to PyCOL\nPyCOL is developed by Dhanush H V",
+        'Welcome to PyCOL\nPyCOL is developed by Dhanush H V',
         5,
-        (on_click = () => alert("Clicked")),
         "",
         false,
         false,
