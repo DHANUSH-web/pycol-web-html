@@ -175,6 +175,7 @@ const notifier = (
         text: string,
         duration: sleep * 1000,
         className: "info",
+        destination: 'http://www.pycol.netlify.app/',
         newWindow: new_window,
         close: close,
         gravity: grav,
@@ -281,12 +282,12 @@ document.addEventListener(
 
 window.onload = () => {
     notifier(
-        'Welcome to PyCOL\nPyCOL is developed by Dhanush H V',
-        5,
+        'Thank you for trying PyCOL-Preview\n\nPyCOL - Web Updated Version is released\nPlease click here to try it',
+        7,
         "",
         false,
         false,
-        "bottom",
+        "top",
         "center",
         false,
         "#0050ffee",
